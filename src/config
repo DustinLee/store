@@ -1,0 +1,22 @@
+[mysql]
+mi=mysql://root:12345@localhost:3306/
+
+[mongo]
+host=mongodb://127.0.0.1:27017
+
+
+[rabbitmq]
+host = 10.99.184.243
+# timeout意味着单个任务执行不能超过这个时限, 否则就会触发异常, 被超时
+# 考虑到重新加载代理列表很慢, 所以需要留给充足的时间去初始化代理
+timeout = 300
+
+[solr]
+master = 10.99.184.243:8983
+slave = 10.99.184.243:8983
+failover_timeout = 500
+
+[book_matcher]
+solr_url = http://10.99.184.243:8983/solr/external
+mongo_host = mongodb://10.99.184.244:27017
+
